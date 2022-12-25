@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-echo Running Node.js API
+echo 'Running Node.js API'
 npm start
