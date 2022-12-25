@@ -16,8 +16,7 @@ pipeline {
     }        
     stage('Run') {
       steps {
-        sh 'chmod 777 build.sh'
-        sh './build.sh'
+        sh 'pm2 start server.js'
       }
     }
   }
