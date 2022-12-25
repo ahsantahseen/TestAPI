@@ -9,10 +9,10 @@ pipeline {
     }
     stage('Navigation To Directory'){
         steps{
-             sh '...
+             sh ...
                  cd /
                  cd /usr
-                 ...'
+                 ...
         }
     }
     stage('Removing Old Builds'){
