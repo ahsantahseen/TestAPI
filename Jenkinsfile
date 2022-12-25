@@ -7,6 +7,9 @@ pipeline {
     stage('Logging As Superuser'){
         sh 'sudo su'
     }
+    stage('Changing To Root Directory'){
+        sh 'cd /'
+    }
     stage('Navigation To Directory'){
         steps{
              sh 'cd /usr'
