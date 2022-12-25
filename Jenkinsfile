@@ -4,11 +4,6 @@ pipeline {
   tools {nodejs "node"}
     
   stages {
-    stage('Logging As Superuser'){
-        steps{
-            sh 'sudo su'
-        }
-    }
     stage('Changing To Root Directory'){
         steps{
             sh 'cd /'
