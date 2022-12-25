@@ -5,10 +5,14 @@ pipeline {
     
   stages {
     stage('Logging As Superuser'){
-        sh 'sudo su'
+        steps{
+            sh 'sudo su'
+        }
     }
     stage('Changing To Root Directory'){
-        sh 'cd /'
+        steps{
+            sh 'cd /'
+        }
     }
     stage('Navigation To Directory'){
         steps{
