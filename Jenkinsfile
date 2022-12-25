@@ -13,9 +13,7 @@ pipeline {
       steps {
         sh 'npm install'
       }
-    }  
-    
-            
+    }        
     stage('Run') {
       steps {
         sh 'node index.js'

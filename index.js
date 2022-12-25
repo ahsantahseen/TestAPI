@@ -1,17 +1,20 @@
 const express = require("express");
 const app = express();
 
-const PORT = process.env.PORT || 4000;
-const SERVER = process.env.SERVER;
+const PORT = 4000;
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res
     .send({
-      message: `HELLO FROM SERVER ${SERVER} RUNNING ON PORT ${PORT}`,
+      message: `HELLO FROM SERVER RUNNING ON PORT ${PORT}`,
     })
     .status(200);
 });
 
-app.listen(() => {
-  console.log("App is Listening on PORT: ", PORT);
-}, PORT);
+try {
+  app.listen(PORT, () => {
+    console.log("App is Listening on PORT: ", PORT);
+  });
+} catch (error) {
+  console.log(error);
+}
