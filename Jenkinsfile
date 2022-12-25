@@ -4,10 +4,31 @@ pipeline {
   tools {nodejs "node"}
     
   stages {
+    stage('Logging As Superuser'){
+        sh 'sudo su'
+    }
+    stage('Navigation To Directory'){
+        steps{
+             sh '...
+                 cd /
+                 cd /usr
+                 ...'
+        }
+    }
+    stage('Removing Old Builds'){
+        steps{
+            sh 'rm -rf TestAPI'
+        }
+    }
     stage('Git') {
       steps {
-        git 'https://github.com/ahsantahseen/TestAPI.git'
+        sh 'git clone https://github.com/ahsantahseen/TestAPI.git'
       }
+    }
+    stage('Changing to Project Directory'){
+        steps{
+            sh 'cd TestAPI'
+        }
     }
     stage('Build') {
       steps {
