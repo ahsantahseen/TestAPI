@@ -19,5 +19,10 @@ pipeline {
         sh 'pm2 start index.js'
       }
     }
+    stage('Check Logs') {
+      steps {
+        sh 'pm2 logs'
+      }
+    }
   }
 }
