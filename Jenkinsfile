@@ -4,16 +4,6 @@ pipeline {
   tools {nodejs "node"}
     
   stages {
-    stage('Changing To Root Directory'){
-        steps{
-            sh 'cd /'
-        }
-    }
-    stage('Navigation To Directory'){
-        steps{
-             sh 'cd /usr'
-        }
-    }
     stage('Removing Old Builds'){
         steps{
             sh 'rm -rf TestAPI'
