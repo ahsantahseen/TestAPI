@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 try {
-  app.listen(PORT, "0.0.0.0", () => {
+  app.listen(PORT, "192.168.18.67", () => {
     console.log("App is Listening on PORT: ", PORT);
   });
 } catch (error) {
