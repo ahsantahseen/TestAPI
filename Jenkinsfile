@@ -1,33 +1,26 @@
 pipeline {
-  agent any
-    
-  tools {nodejs "node"}
-    
-  stages {
-    stage('Removing Old Builds'){
-        steps{
-            sh 'rm -rf TestAPI'
+    agent any
+    triggers {
+       githubPush()
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
         }
     }
-    stage('Git') {
-      steps {
-        sh 'git clone https://github.com/ahsantahseen/TestAPI.git'
-      }
-    }
-    stage('Changing to Project Directory'){
-        steps{
-            sh 'cd TestAPI'
+    post{
+        success {
+            mail to: "ahsan.tntboy@gmail.com",
+            subject: "Build Notification",
+            body: "Development Build Successful"
+        }
+        failure {
+            mail to: "ahsan.tntboy@gmail.com",
+            subject: "Build Notification",
+            body: "Build Failed"
         }
     }
-    stage('Build') {
-      steps {
-        sh 'npm install'
-      }
-    }        
-    stage('Run') {
-      steps {
-        sh 'pm2 start index.js'
-      }
-    }
-  }
 }
