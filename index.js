@@ -6,7 +6,7 @@ const PORT = 4000;
 app.get("/", (req, res) => {
   res
     .send({
-      message: `HELLO FROM SERVER RUNNING ON PORT ${PORT}`,
+      message: `HELLO FROM SERVER RUNNING ON PORT ${PORT} OK`,
     })
     .status(200);
 });
