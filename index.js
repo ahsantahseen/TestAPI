@@ -6,7 +6,7 @@ const PORT = 4000;
 app.get("/", (req, res) => {
   res
     .send({
-      message: `HELLO`,
+      message: `HELLO WORLD`,
     })
     .status(200);
 });
