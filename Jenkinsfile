@@ -5,9 +5,19 @@ pipeline {
     }
 
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
+        stage('Git'){
+            steps{
+                git 'https://github.com/ahsantahseen/TestAPI.git'
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'npm install'
+            }
+        }
+        stage('Run'){
+            steps{
+                sh 'node index.js'
             }
         }
     }
